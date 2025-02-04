@@ -6,7 +6,25 @@ A presente análise contempla o volume exportado do Brazil no ano de 2023. Estes
 
 **Cobertura temporal**: 2023
 **Fonte**: Comexstat (https://comexstat.mdic.gov.br/pt/home)
+### Extração dos dados
+```
+#Importar as bibliotecas
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
 
+#Acessar o banco de dados
+df = pd.read_excel('EXP2023.xlsx')
+df = df.dropna()
+
+#Renomear coluna
+df = df.rename(columns={'2023 - Valor US$ FOB':'2023','UF do Produto':'UF'})
+
+# Dividir a coluna 'volume' por 1.000.000
+df['2023'] = df['2023'] / 1000000000
+df.head()
+
+```
 ## Processamento dos dados
 ```
 **Renomear coluna
