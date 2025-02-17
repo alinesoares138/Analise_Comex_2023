@@ -123,8 +123,9 @@ Em 2023, as exportações brasileiras continuaram a mostrar um forte vínculo co
 
 Estados brasileiros e seus principais produtos exportados:
 
+* São Paulo: São Paulo, o estado mais industrializado do Brasil, é responsável por exportações de produtos manufaturados e também de commodities como açúcar. A indústria paulista também exporta máquinas, equipamentos e produtos químicos, sendo um elo importante nas relações comerciais com os Estados Unidos e a União Europeia.
+* Rio de Janeiro: Dentre os produtos mais exportados pelo estado do Rio de Janeiro, destaca-se: petróleo, produtos semiacabados, óleos combustíveis, motores/máquinas não elétricos e outros. E sua maior parceira foi a China, que representou 39% das exportações totais do estado.
 * Mato Grosso: Este estado é um dos maiores exportadores do Brasil, especialmente em produtos agrícolas. A soja, milho e algodão são os principais itens exportados por Mato Grosso, sendo grandes responsáveis pelo crescimento das exportações brasileiras. O estado também lidera a exportação de carnes, principalmente para mercados asiáticos.
-* São Paulo: São Paulo, o estado mais industrializado do Brasil, é responsável por exportações de produtos manufaturados e também de commodities como café. A indústria paulista também exporta máquinas, equipamentos e produtos químicos, sendo um elo importante nas relações comerciais com os Estados Unidos e a União Europeia.
 
 Países parceiros e sua forte demanda:
 * A China continua sendo o maior parceiro comercial do Brasil. Em 2023, a demanda chinesa por soja, carne (bovina e de frango), minério de ferro e outros produtos agrícolas continuou em alta, consolidando a relação estratégica entre os dois países. A China, com seu enorme mercado e crescente demanda por alimentos e recursos naturais, permanece central para as exportações brasileiras.
