@@ -5,7 +5,9 @@ As exportações do Brasil desempenham um papel fundamental na economia do país
 A presente análise contempla o volume exportado do Brazil no ano de 2023. Estes valores estão em US$ FOB (<i>Free on Board</i>). Segundo o IPEA, FOB dizer que o exportador é responsável pela mercadoria até ela estar dentro do navio, para transporte, no porto indicado pelo comprador. E "free" porque a mercadoria já deve ter sido desembaraçada na alfândega de partida e estar livre para ser levada.
 
 **Cobertura temporal**: 2023
-**Fonte**: Comexstat (https://comexstat.mdic.gov.br/pt/home)
+
+**Fonte**: Comexstat (https://comexstat.mdic.gov.br/pt/home) e Our World in Data
+
 ### Extração dos dados
 ```
 #Importar as bibliotecas
