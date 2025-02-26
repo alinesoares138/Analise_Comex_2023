@@ -38,7 +38,7 @@ df.head()
 top_paises = df.groupby('Pais')['2023'].sum().sort_values(ascending=False).head(10)
 print(top_paises)
 
-#Plotar os 5 maiores exportadores do Brazil em 2023
+#Plotar os 10 maiores exportadores do Brazil em 2023
 # Plotar com o gráfico de barras vertical
 plt.figure(figsize=(6,4))
 top_paises.plot(kind='bar', color='skyblue')
@@ -60,18 +60,18 @@ plt.show()
 </span>
 
 <div align="left">
-<a href="https://colab.research.google.com/drive/1zR6yncMGbNFfSP9CrptXc99f-I5Kojy0?usp=sharing"><img src="https://github.com/user-attachments/assets/24a397f4-9cc8-490f-932a-ecd1d095f217" width="700px" />
+<a href="https://colab.research.google.com/drive/1zR6yncMGbNFfSP9CrptXc99f-I5Kojy0?usp=sharing"><img src="https://github.com/user-attachments/assets/7496e3f4-703e-4bfa-a7ca-c0ea24963f4f" width="700px" />
 </div>
 
 <span align="left"> 
 
 ```
-##Localizar os 5 maiores estados exportadores do Brazil em 2023
+##Localizar os 10 maiores estados exportadores do Brazil em 2023
 # Agrupar os dados por Países e somar os valores de exportação em 2023
 top_estados = df.groupby('UF')['2023'].sum().sort_values(ascending=False).head(10)
 print(top_estados)
 
-#Plotar os 5 maiores exportadores do Brazil em 2023
+#Plotar os 10 maiores exportadores do Brazil em 2023
 # Plotar com o gráfico de barras vertical
 plt.figure(figsize=(6,4))
 top_estados.plot(kind='bar', color='purple')
@@ -93,7 +93,7 @@ plt.show()
 </span>
 
 <div align="left">
-<a href="https://colab.research.google.com/drive/1zR6yncMGbNFfSP9CrptXc99f-I5Kojy0?usp=sharing"><img src="https://github.com/user-attachments/assets/02eba240-03cd-409f-b0a3-899354829c76" width="700px" />
+<a href="https://colab.research.google.com/drive/1zR6yncMGbNFfSP9CrptXc99f-I5Kojy0?usp=sharing"><img src="https://github.com/user-attachments/assets/735c74f3-c8f8-442a-9193-3176e90086f3" width="700px" />
 </div>
 
 <span align="left"> 
@@ -130,7 +130,13 @@ plt.ylabel('Volume de Exportação (Bilhões USD)', fontsize=12)
 plt.show()
 
 ```
-foto
+</span>
+
+<div align="left">
+<a href="https://colab.research.google.com/drive/1zR6yncMGbNFfSP9CrptXc99f-I5Kojy0?usp=sharing"><img src="https://github.com/user-attachments/assets/8eb36c9d-9854-4804-8a29-c0a9e82d0219" width="700px" />
+</div>
+
+<span align="left"> 
 
 ```
 #Analisar a Regressão linear para prever exportações com base no ranking
@@ -162,9 +168,14 @@ plt.ylabel('Países', fontsize=12)
 plt.show()
 
 ```
+</span>
 
-Foto
+<div align="left">
+<a href="https://colab.research.google.com/drive/1zR6yncMGbNFfSP9CrptXc99f-I5Kojy0?usp=sharing"><img src="https://github.com/user-attachments/assets/d74ac5e7-b624-44a7-9fba-67c527d77ad9" width="700px" />
+</div>
 
+<span align="left"> 
+```
 
 ### Análise dos dados
 
