@@ -10,7 +10,6 @@ A presente análise contempla o volume exportado do Brazil no ano de 2023. Estes
 ```
 #Importar as bibliotecas
 import pandas as pd
-import numpy as np
 import matplotlib.pyplot as plt
 
 #Acessar o banco de dados
@@ -34,37 +33,28 @@ Dividir a coluna 'volume' por 1.000.000
 df['2023'] = df['2023'] / 1000000000
 df.head()
 
-Localizar os 5 maiores importadores do Brazil em 2023
-Agrupar os dados por Países e somar os valores de exportação em 2023
-maiores_importadores = df.groupby('Países')['2023'].sum()
+##Localizar os 10 maiores exportadores do Brazil em 2023
+# Agrupar os dados por Países e somar os valores de exportação em 2023 em ordem decrescente
+top_paises = df.groupby('Pais')['2023'].sum().sort_values(ascending=False).head(10)
+print(top_paises)
 
-Ordenar os países pela exportação de 2023, de forma decrescente
-maiores_importadores = maiores_importadores.sort_values(ascending=False)
+#Plotar os 5 maiores exportadores do Brazil em 2023
+# Plotar com o gráfico de barras vertical
+plt.figure(figsize=(6,4))
+top_paises.plot(kind='bar', color='skyblue')
 
-Selecionar os 5 maiores importadores
-top_5_importadores = maiores_importadores.head(5)
+# Adicionar título e rótulos aos eixos
+plt.title('Top 10 Países Exportadores em 2023', fontsize=12)
+plt.xlabel('Países', fontsize=10)
+plt.ylabel('Valor FOB (Bilhões USD)', fontsize=10)
 
-Exibir os 5 maiores importadores
-print(top_5_importadores)
+# Adicionar as labels ao eixo X e girando para melhor visualização
+plt.xticks(rotation=45, ha='right', fontsize=10)
+plt.yticks(fontsize=10)
 
-Plotar os 5 maiores importadores do Brazil em 2023
-Plotar com o gráfico de barras vertical
-plt.figure(figsize=(8,6)) 
-top_5_importadores.plot(kind='bar', color='skyblue') 
-
-Adicionar título e rótulos aos eixos
-plt.title('Top 5 Países Importadores em 2023', fontsize=16)
-plt.xlabel('Países', fontsize=0)
-plt.ylabel('Em bilhões USD', fontsize=14)
-
-Adicionar as labels ao eixo X e girando para melhor visualização
-plt.xticks(rotation=45, ha='right', fontsize=14)
-plt.yticks(fontsize=14)
-
-Exibir o gráfico
+# Exibir o gráfico
 plt.tight_layout()  # Ajusta o layout para evitar sobreposição de textos
 plt.show()
-
 ```
 
 </span>
@@ -76,35 +66,27 @@ plt.show()
 <span align="left"> 
 
 ```
-Localizar os 5 maiores estados exportadores do Brazil em 2023
-Agrupar os dados por Países e somar os valores de exportação em 2023
-maiores_uf_exp = df.groupby('UF')['2023'].sum()
+##Localizar os 5 maiores estados exportadores do Brazil em 2023
+# Agrupar os dados por Países e somar os valores de exportação em 2023
+top_estados = df.groupby('UF')['2023'].sum().sort_values(ascending=False).head(10)
+print(top_estados)
 
-Ordenar os países pela exportação de 2023, de forma decrescente
-maiores_uf_exp = maiores_uf_exp.sort_values(ascending=False)
+#Plotar os 5 maiores exportadores do Brazil em 2023
+# Plotar com o gráfico de barras vertical
+plt.figure(figsize=(6,4))
+top_estados.plot(kind='bar', color='purple')
 
-Selecionar os 5 maiores estados exportadores (caso haja mais de 10)
-top_5_uf_exp = maiores_uf_exp.head(5)
-
-Exibir os 5 maiores estados exportadores
-print(top_5_uf_exp)
-
-Plotar os 5 maiores importadores do Brazil em 2023
-Plotar com o gráfico de barras vertical
-plt.figure(figsize=(8,6))  
-top_5_uf_exp.plot(kind='bar', color='purple') 
-
-Adicionar título e rótulos aos eixos
-plt.title('Top 5 Maiores Estados Exportadores em 2023', fontsize=16)
+# Adicionar título e rótulos aos eixos
+plt.title('Top 10 Estados Exportadores em 2023', fontsize=12)
 plt.xlabel('UFs', fontsize=0)
-plt.ylabel('Em bilhões USD', fontsize=12)
+plt.ylabel('Em bilhões USD', fontsize=10)
 
-Adicionar as labels ao eixo X e girando para melhor visualização
-plt.xticks(rotation=45, ha='right', fontsize=14)
-plt.yticks(fontsize=14)
+# Adicionar as labels ao eixo X e girando para melhor visualização
+plt.xticks(rotation=45, ha='right', fontsize=10)
+plt.yticks(fontsize=10)
 
-Exibir o gráfico
-plt.tight_layout()  
+# Exibir o gráfico
+plt.tight_layout()
 plt.show()
 
 ```
@@ -115,6 +97,74 @@ plt.show()
 </div>
 
 <span align="left"> 
+
+```
+#Ver estatísticas descritivas
+descricao = df['2023'].describe()
+print("Estatísticas Descritivas das Exportações:")
+print(descricao) 
+
+Resultado:
+Estatísticas Descritivas das Exportações:
+count    3633.000000
+mean        0.093503
+std         0.658026
+min         0.000000
+25%         0.000138
+50%         0.001643
+75%         0.018508
+max        18.160606
+Name: 2023, dtype: float64
+
+#Cruzar duas fontes diferentes 
+df_pib = pd.read_excel('PIB.xlsx')
+df_combinado = pd.merge(df, df_pib, on='Pais', how='inner')
+print(df_combinado.head())
+
+#Analisar a correlação entre estados e volume de exportação
+correlacao = df_combinado[['PIB', '2023']].corr()
+sns.regplot(x='PIB', y='2023', data=df_combinado, scatter_kws={'color':'blue'}, line_kws={'color':'red'})
+plt.title('Correlação entre PIB e Volume de Exportação', fontsize=16)
+plt.xlabel('PIB (Bilhões USD)', fontsize=12)
+plt.ylabel('Volume de Exportação (Bilhões USD)', fontsize=12)
+plt.show()
+
+```
+foto
+
+```
+#Analisar a Regressão linear para prever exportações com base no ranking
+dados = df_combinado[['PIB', '2023']]
+slope, intercept, r_value, p_value, std_err = linregress(dados['PIB'], dados['2023'])
+print(f"Coeficiente Angular (slope): {slope:.4f}")
+print(f"Intercepto: {intercept:.4f}")
+print(f"Coeficiente de Correlação (R²): {r_value**2:.4f}")
+print(f"Valor p: {p_value:.4f}")
+
+if p_value < 0.05:
+    print("A relação entre o PIB e o volume de exportação é estatisticamente significativa.")
+else:
+    print("Não há evidências estatísticas suficientes para afirmar que o PIB influencia diretamente as exportações.")
+
+Resultado: Coeficiente Angular (slope): -0.0000
+Intercepto: 1.1153
+Coeficiente de Correlação (R²): 0.0288
+Valor p: 0.0050
+A relação entre o PIB e o volume de exportação é estatisticamente significativa.
+
+#Representar resultado em gráfico de barras horizontais
+df_combinado_sorted = df_combinado.sort_values('PIB', ascending=False)
+plt.figure(figsize=(10, 6))
+sns.barplot(x='PIB', y='Pais', data=df_combinado_sorted, hue='Pais', palette='viridis', legend=False)
+plt.title('PIB por País e Volume de Exportação', fontsize=16)
+plt.xlabel('PIB (Bilhões USD)', fontsize=12)
+plt.ylabel('Países', fontsize=12)
+plt.show()
+
+```
+
+Foto
+
 
 ### Análise dos dados
 
