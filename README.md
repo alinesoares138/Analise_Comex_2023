@@ -1,4 +1,4 @@
-# Exportações brasileiras (2023)
+# Exportações em 2023
 
 As exportações do Brasil desempenham um papel fundamental na economia do país, sendo uma importante fonte de divisas e contribuindo significativamente para o crescimento econômico. O Brasil é um dos maiores exportadores globais, com produtos como soja, café, carne, minério de ferro, petróleo e produtos agrícolas dominando seus embarques internacionais. O agronegócio brasileiro, em particular, tem se destacado pela competitividade e pela presença em mercados-chave, como a China, Estados Unidos e União Europeia. Além disso, as exportações brasileiras são um reflexo da diversidade de sua produção, abrangendo tanto commodities quanto produtos manufaturados, o que fortalece sua posição no comércio global.
 
